@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery with Pure Pantry</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: rgb(222, 231, 231);
+      }
+      .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 50px;
+        text-wrap: wrap;
+        box-shadow: 3px 1px 2px black;
+      }
+      .logo {
+        display: flex;
+        text-align: center;
+      }
+      .logo img {
+        border: 2px solid rgb(241, 238, 238);
+        box-shadow: 1px 1px 2px black;
+        justify-content: right;
+        /* padding: 4px; */
+        margin: 4px;
+        width: 35px;
+        height: 35px;
+      }
+      .nav{
+        height: 70px;
+        margin-top: 20px;
+        font-size: large;
+      }
+      .nav ul {
+        display: flex;
+        color: black;
+        list-style-type: none;
+        text-decoration: none;
+      }
+      .nav ul li {
+        padding: 20px;
+      }
+      .nav ul li a {
+        text-decoration: none;
+        color: black;
+      }
+      .nav a:hover {
+        background-color: rgb(77, 75, 75);
+        color: white;
+        padding: 4px;
+        border-radius: 10px;
+      }
+      .btn a {
+        height: 10px;
+        padding: 10px;
+        color: rgb(254, 251, 251);
+        text-decoration: none;
+        list-style-type: none;
+        background-color: blueviolet;
+        border-radius: 20px;
+      }
+      /* .btn a:hover{
+        background-color: brown;
+     } */
+      .banner {
+        background-image: linear-gradient(to top, pink, rgb(174, 45, 174));
+        display: flex;
+        justify-content: space-evenly;
+        padding: 20px 0px;
+        width: 100%;
+        height: 400px;
+        display: flex;
+      }
+      .pic img {
+        width: 400px;
+      }
+      .text h2,
+      h3 {
+        /* color:white; */
+        margin: 20px 0;
+        text-align: center;
+      }
+      .text a {
+        text-align: center;
+        color: white;
+        background-color: black;
+        text-decoration: none;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      .card-1 h2 {
+        font-size: 2em;
+        text-align: center;
+        padding: 20px;
+        /* height: 50px; */
+      }
+      .cards img {
+        width: 350px;
+        height: 300px;
+      }
+      .cards {
+        display: flex;
+        margin: 20px;
+        padding: 5px;
+        flex-direction:row;
+        flex-wrap: wrap;
+        padding: 20px 20px;
+        justify-content: space-evenly; 
+        /* border: 2px solid black; */
+      }
+      .card {
+        margin: 40px 40px;
+        padding: 4px;
+        color: black;
+        text-align: center;
+      }
+      .card:hover {
+       box-shadow: 1px 3px 1px 1px gray;
+      }
+      .about h2 {
+        text-align: center;
+        font-size: 2rem;
+        /* padding:15px 0px; */
+      }
+      .box {
+        background-image: linear-gradient(to top, white, rgb(241, 157, 171));
+        height: 470px;
+        margin: 50px;
+      }
+      .box {
+        display: flex;
+        /* padding:20px 0px; */
+        justify-content: space-evenly;
+        flex-direction: row-reverse;
+      }
+      .box p {
+        margin: 20px;
+        text-align: center;
+        padding-top: 10%;
+        font-size: large;
+      }
+      .box button {
+        border: none;
+        background-color: rgb(77, 77, 232);
+        color: white;
+        padding: 5px;
+        margin: 5px;
+      }
+      .about img {
+        width: 400px;
+        height: 400px;
+        margin: 40px;
+        padding-left: 10px;
+        border-radius: 20px;
+      }
+      .contact h2{
+        font-size: 2rem;
+      }
+      .contact {
+        background-color: rgb(239, 144, 144);
+        text-align: center;
+        padding: 10px;
+        margin: 60px;
+      }
+
+      .box2 {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+      .box2 img{
+       width: 300px;
+       height: 300px;
+       border-radius: 10px;
+     
+      }
+      .box2 td{
+        justify-content: center;
+        margin: 5em;
+        padding: 5px;
+      }
+      .box2 table{
+        margin-top: 10px;
+        background-color: antiquewhite;
+        height: 200px;
+        width: 25%;
+        border-radius: 10px;
+        /* padding: 20px; */
+      }
+      .box2 table:hover{
+        box-shadow: 1px 2px 2px 1px rgb(37, 32, 32);
+      }
+     
+      .pic2 img {
+        padding: 5px;
+        height: 30px;
+        width: 30px;
+      }
+      .pic2 img:hover{
+        background-color: rgb(139, 132, 132);
+        border-radius: 5px;
+      }
+      .footer {
+        position: sticky;
+        bottom: 0;
+        background-color: rgb(0, 0, 0);
+        color: rgb(250, 241, 241);
+        padding: 8px 10px;
+        text-align: center;
+        height:30px;
+      }
+      @media (max-width:768px) {
+        .banner{
+          flex-wrap: wrap;
+          margin:10px;
+          padding: 10px;
+          align-items: center;
+          width:100%;
+        }
+        .text {
+         text-align: center;
+         width: 40px;
+
+        }
+        .about{
+          margin: 10px;
+        }
+       .box img{
+        justify-content: center;
+        width: 200px;
+        height:300px;
+       }
+       .contact{
+        width:100%;
+       }
+       .box2 img{
+        width:100px;
+        height: 100px;
+       }
+       .box2 table{
+         height:100px;
+         width: 50px;
+       }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo" data-aos="flip-right">
+        <img src="shopping logo1280.png" alt="" />
+        <header>
+          <h1>Grocery with Pure Pantry</h1>
+          <!-- <div><img src="/shopping logo1280.png" alt=""></div> -->
+        </header>
+      </div>
+      <div class="nav">
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="#Explore for more">Explore for more</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#Contact us">Contact us</a></li>
+        </ul>
+      </div>
+
+      <div class="btn">
+        <a href="">Login</a>
+        <a href="">Sign up</a>
+      </div>
+    </div>
+    <section class="banner">
+      <div class="text">
+        <h2>Do you want to do the shopping??</h2>
+        <h3>Without any problem, So use this application.</h3>
+        <a href="#">Buy Now</a>
+      </div>
+      <div class="pic">
+        <img src="Boyremovebg-preview.png" alt="" />
+      </div>
+    </section>
+    <section class="card-1" id="Explore for more">
+      <h2>Explore more things</h2>
+      <div class="cards">
+        <div class="card" data-aos="zoom-out-down">
+          <img src="vegetables-752153_1280.jpg" alt="" />
+          <h3>vegetables</h3>
+        </div>
+        <div class="card" data-aos="zoom-out-down">
+          <img src="fresh-fruits-2305192_1280.jpg" alt="" />
+          <h3>Fruits</h3>
+        </div>
+        <div class="card" data-aos="zoom-out-down">
+          <img src="Dairy products.jpg" alt="" />
+          <h3>Diary Products</h3>
+        </div>
+        <div class="card" data-aos="zoom-out-down">
+          <img src="pepper-5501218_1280.jpg" alt="" />
+          <h3>Spices</h3>
+        </div>
+        <div class="card" data-aos="zoom-out-down">
+          <img src="Cereal-Production.jpg" alt="" />
+          <h3>Cereal</h3>
+        </div>
+        <div class="card" data-aos="zoom-out-down">
+          <img src="Meat and fish" alt="" />
+          <h3>Meat/Fish</h3>
+        </div>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <h2>About us</h2>
+      <div class="box">
+        <img src="About_pic-removebg-preview.png" alt="" />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio
+          molestiae debitis consectetur veniam enim quod autem, culpa laborum ab
+          maxime.
+          <br />
+          <button>Read more</button>
+        </p>
+      </div>
+    </section>
+
+    <section class="contact" id="Contact us">
+      <h2>Contact us</h2>
+      <!-- <div class="conimage"><img src="/Contact us.jpg" alt=""> -->
+      <div class="box2">
+        <img src="Contact us.jpg" alt="">
+          <table align="center">
+            <form align="center" action="">
+              <tr>
+                <td><label for="">Name:</label></td>
+                <td><input type="text" placeholder="Albert" /></td>
+                <br />
+              </tr>
+              <tr>
+                <td><label for="">Email:</label></td>
+                <td><input type="email"  placeholder="abc@gmail.com"/></td>
+                <br />
+              </tr>
+              <tr>
+                <td><label for="">Contact:</label></td>
+                <td><input type="tel"  placeholder="090078601"/></td>
+              </tr>
+            </form>
+          </table>
+        </div>
+        <div class="pic2">
+          <img src="contact-us.png" alt="" />
+          <img src="emai.png" alt="" />
+          <img src="chat-bubble.png" alt="" />
+        </div>
+    
+    </section>
+
+    <footer class="footer">
+      <p>
+        <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+        <span class="nowrap">Grocery with Pure Pantry</span>
+      </p>
+
+    </footer>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
